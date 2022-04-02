@@ -10,7 +10,7 @@ const address = document.getElementById('address');
 const number = document.getElementById('contact-num');
 
 // let contactArray = [];
-let id = 0;
+let id= 1;
 
 addBtn.addEventListener('click', function(){
     const nameInputVal = namee.value;
@@ -24,33 +24,37 @@ addBtn.addEventListener('click', function(){
 function addToList(item1, item2, item3){
     const newRecordDiv = document.createElement('div');
     newRecordDiv.classList.add('record-item');
-    newRecordDiv.innerHTML = `
-    <div class="record-el">
-        <span id="labelling">Contact ID: </span>
-        <span id="contact-id-content">${id++}</span>
-    </div>
-    <div class="record-el">
-        <span id="labelling">Name: </span>
-        <span id="contact-id-content">${item1}</span>
-    </div>
-    <div class="record-el">
-        <span id="labelling">Address:  </span>
-        <span id="contact-id-content">${item2}</span>
-    </div>
-    <div class="record-el">
-        <span id="labelling">Contact Number: </span>
-        <span id="contact-id-content">${item3}</span>
-    </div>
-
-    <button type="button"  id="delete-btn">
-        <span>
-            <i class="fas fa-trash"></i>
-        </span>Delete
-    </button>
+    if(item1, item2, item3){
+        newRecordDiv.innerHTML = `
+        <div class="record-el">
+            <span id="labelling">Contact ID: </span>
+            <span id="contact-id-content">${id++}</span>
+        </div>
+        <div class="record-el">
+            <span id="labelling">Name: </span>
+            <span id="contact-id-content">${item1}</span>
+        </div>
+        <div class="record-el">
+            <span id="labelling">Address:  </span>
+            <span id="contact-id-content">${item2}</span>
+        </div>
+        <div class="record-el">
+            <span id="labelling">Contact Number: </span>
+            <span id="contact-id-content">${item3}</span>
+        </div>
     
-    `;
-
-    recordContainer.appendChild(newRecordDiv);
+        <button type="button"  id="delete-btn">
+            <span>
+                <i class="fas fa-trash"></i>
+            </span>Delete
+        </button>
+        
+        `;
+        recordContainer.appendChild(newRecordDiv);
+    }else{
+        alert("Fill all Inputs");
+    }
+    
     clearInputFields();
 
 }
